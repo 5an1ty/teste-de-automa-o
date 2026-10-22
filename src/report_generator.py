@@ -20,7 +20,7 @@ def generate(root, run_id, results, mode):
     }
     (directory / "resumo.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     with (directory / "relatorio.csv").open("w", encoding="utf-8-sig", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=["execucao", "data", *results[0].to_dict()])
+        writer = csv.DictWriter(stream, fieldnames=["execucao", "data", *results[0].to_dict()], lineterminator="\n")
         writer.writeheader()
         for result in results:
             row = result.to_dict()
@@ -30,7 +30,7 @@ def generate(root, run_id, results, mode):
             row = {k: ("'" + v if isinstance(v, str) and v.startswith(("=", "+", "-", "@")) else v) for k, v in row.items()}
             writer.writerow({"execucao": run_id, "data": summary["data"], **row})
     lines = ["RELATÓRIO DE ORDENS — PCM", json.dumps(summary, ensure_ascii=False)]
-    lines += [f"Ordem: {r.numero} | {r.resultado} | Impressão: {r.impressao} | Motivos: {', '.join(r.motivos)}" for r in results]
+    lines += [f"Ordem: {r.numero} | {r.resultado} | Impressão: {r.impressao} | Motivos: {', '.join(r.motivos) or 'nenhum'}" for r in results]
     (directory / "relatorio.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
     from .logger import registrar_resultado
     for result in results:

@@ -1,6 +1,6 @@
 RELATÓRIO DE ORDENS — PCM
 {"execucao": "df7ef363c4234926b34bff5869d85e09", "data": "2026-10-22T17:57:53.509191+00:00", "modo": "DRY_RUN", "total": 4, "aprovadas": 1, "reprovadas": 3, "nao_processadas": 0, "solicitadas": 0, "enviadas": 0, "confirmadas": 0, "nao_confirmadas": 0, "falhas_tecnicas": 0}
-Ordem: 1894 | APROVADA | Impressão: SIMULADA_SEM_ENVIO | Motivos: 
+Ordem: 1894 | APROVADA | Impressão: SIMULADA_SEM_ENVIO | Motivos: nenhum
 Ordem: 1895 | REPROVADA | Impressão: NAO_SOLICITADA | Motivos: TECNICO_PREENCHIDO
 Ordem: 1896 | REPROVADA | Impressão: NAO_SOLICITADA | Motivos: OPERADOR_NAO_AUTORIZADO
 Ordem: 1897 | REPROVADA | Impressão: NAO_SOLICITADA | Motivos: ORDEM_NAO_ENCONTRADA
