@@ -1,0 +1,38 @@
+{
+  "1894": {
+    "numero": "1894",
+    "status": "Fechado",
+    "horas": "0",
+    "minutos": "15",
+    "tipo": "Manutenção",
+    "solicitante": "Solicitante fictício",
+    "operador_id": "00247",
+    "operador_nome": "Operador fictício",
+    "tecnico_id": "",
+    "tecnico_nome": ""
+  },
+  "1895": {
+    "numero": "1895",
+    "status": "Fechado",
+    "horas": "0",
+    "minutos": "15",
+    "tipo": "Manutenção",
+    "solicitante": "Solicitante fictício",
+    "operador_id": "00247",
+    "operador_nome": "Operador fictício",
+    "tecnico_id": "99",
+    "tecnico_nome": ""
+  },
+  "1896": {
+    "numero": "1896",
+    "status": "Fechado",
+    "horas": "0",
+    "minutos": "15",
+    "tipo": "Manutenção",
+    "solicitante": "Solicitante fictício",
+    "operador_id": "999",
+    "operador_nome": "Operador fictício",
+    "tecnico_id": "",
+    "tecnico_nome": ""
+  }
+}

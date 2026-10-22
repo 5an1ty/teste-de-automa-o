@@ -1,0 +1,2 @@
+00247;Operador Fictício A
+371;Operador Fictício B

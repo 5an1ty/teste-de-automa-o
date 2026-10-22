@@ -1,0 +1,9 @@
+{
+  "mode": "DRY_RUN",
+  "printing_enabled": false,
+  "order_type": "Manutenção",
+  "orders": "data/ordens.txt",
+  "operators": "data/operadores.txt",
+  "fixtures": "data/simulacao.json",
+  "reports": "reports/runs"
+}
