@@ -1,2 +1,7 @@
-00247;Operador Fictício A
-371;Operador Fictício B
+340;Guilherme
+330;Deni
+338;Gabriel
+342;Hyonattan
+427;Márcio
+504;Gracielly
+497;MAURO

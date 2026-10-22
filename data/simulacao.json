@@ -6,8 +6,8 @@
     "minutos": "15",
     "tipo": "Manutenção",
     "solicitante": "Solicitante fictício",
-    "operador_id": "00247",
-    "operador_nome": "Operador fictício",
+    "operador_id": "340",
+    "operador_nome": "Operador simulado",
     "tecnico_id": "",
     "tecnico_nome": ""
   },
@@ -18,8 +18,8 @@
     "minutos": "15",
     "tipo": "Manutenção",
     "solicitante": "Solicitante fictício",
-    "operador_id": "00247",
-    "operador_nome": "Operador fictício",
+    "operador_id": "340",
+    "operador_nome": "Operador simulado",
     "tecnico_id": "99",
     "tecnico_nome": ""
   },

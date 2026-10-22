@@ -152,4 +152,41 @@ class WorkflowTests(unittest.TestCase):
             path.write_text('{"mode":"CONSULTA"}')
             with self.assertRaises(ValueError): load(path)
 
+
+class SuppliedOperatorsTests(unittest.TestCase):
+    def test_supplied_allowlist_exact_ids(self):
+        root = Path(__file__).resolve().parents[1]
+        operators = read_operators(root / 'data/operadores.txt')
+        self.assertEqual(operators, {
+            '340': 'Guilherme', '330': 'Deni', '338': 'Gabriel',
+            '342': 'Hyonattan', '427': 'Márcio', '504': 'Gracielly', '497': 'MAURO',
+        })
+        for identifier in operators:
+            order = replace(VALID, operador_id=identifier)
+            self.assertTrue(all(validar_ordem('1894', order, operators).values()))
+        for identifier in ('34', '0340', '247', '999'):
+            checks = validar_ordem('1894', replace(VALID, operador_id=identifier, operador_nome='Guilherme'), operators)
+            self.assertFalse(checks['OPERADOR_NAO_AUTORIZADO'])
+
+    def test_unread_time_in_screenshot_cannot_authorize(self):
+        root = Path(__file__).resolve().parents[1]
+        operators = read_operators(root / 'data/operadores.txt')
+        order = replace(VALID, numero='446', operador_id='427', horas='', minutos='',
+                        legiveis=frozenset(FIELDS) - {'horas', 'minutos'})
+        checks = validar_ordem('446', order, operators)
+        self.assertFalse(checks['CAMPO_ILEGIVEL'])
+        self.assertFalse(checks['SEM_HORAS_CONSUMIDAS'])
+        self.assertTrue(checks['OPERADOR_NAO_AUTORIZADO'])
+
+    def test_updated_simulation_still_has_one_approval(self):
+        from src.simulator import Simulator
+        root = Path(__file__).resolve().parents[1]
+        operators = read_operators(root / 'data/operadores.txt')
+        with tempfile.TemporaryDirectory() as directory:
+            results, _, stopped = run(read_orders(root / 'data/ordens.txt'), operators,
+                                      Simulator(root / 'data/simulacao.json'), directory)
+        self.assertFalse(stopped)
+        self.assertEqual([r.resultado for r in results], ['APROVADA', 'REPROVADA', 'REPROVADA', 'REPROVADA'])
+        self.assertFalse(any(r.enviada for r in results))
+
 if __name__ == '__main__': unittest.main()

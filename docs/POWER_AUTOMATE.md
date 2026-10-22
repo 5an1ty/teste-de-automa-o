@@ -2,6 +2,8 @@
 
 O PAD está disponível segundo o requisito do projeto. A disponibilidade não concede autorização para novos fluxos: a TI deverá aprovar captura, execução, armazenamento e impressão na sessão de teste. Não instalar Python ou executáveis no computador corporativo sem autorização. Este documento é uma especificação implementável de fluxo; não é um pacote PAD exportado nem foi executado no SAP.
 
+Veja o [mapeamento visual dos prints fornecidos](MAPEAMENTO_SAP.md), incluindo as limitações das horas consumidas e dos campos vazios.
+
 ## Captura necessária no ambiente de teste
 
 No gravador/coleção de elementos de interface do PAD, capture e nomeie localmente:

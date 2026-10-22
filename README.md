@@ -1,6 +1,6 @@
 # Automação de ordens de manutenção — PCM / SAP Business One
 
-Núcleo Python para validar ordens BR One e produzir rastreabilidade individual. O modo padrão **DRY_RUN** usa exclusivamente dados fictícios; não abre o SAP e não imprime.
+Núcleo Python para validar ordens BR One e produzir rastreabilidade individual. O modo padrão **DRY_RUN** usa ordens e leituras fictícias; não abre o SAP e não imprime.
 
 ## Instalação e execução no desenvolvimento
 
@@ -40,4 +40,4 @@ Nenhuma ação de criação, atualização ou fechamento de ordens é exposta. N
 
 Ctrl+C cancela o fluxo e registra o que foi possível observar. Adaptadores reais deverão oferecer cancelamento durante esperas. A interrupção forçada do processo ou falha de disco pode impedir o relatório final: o adaptador de produção deverá persistir um diário durável antes de cada envio e reconciliá-lo antes de qualquer retomada. Não reinicie um lote de impressão após falha sem avaliação individual.
 
-Consulte [Power Automate Desktop](docs/POWER_AUTOMATE.md), [homologação](docs/HOMOLOGACAO.md) e [arquitetura](docs/ARQUITETURA.md). Os exemplos são fictícios e não constituem evidência de funcionamento no SAP.
+Consulte [Power Automate Desktop](docs/POWER_AUTOMATE.md), [homologação](docs/HOMOLOGACAO.md) e [arquitetura](docs/ARQUITETURA.md). As ordens e leituras de exemplo são fictícias e não constituem evidência de funcionamento no SAP. `data/operadores.txt` contém os sete operadores fornecidos pelo usuário; a autorização depende apenas da matrícula exata, não do nome. Consulte também o [mapeamento visual dos prints](docs/MAPEAMENTO_SAP.md).
